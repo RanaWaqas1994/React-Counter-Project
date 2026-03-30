@@ -6,4 +6,17 @@ C:\Users\waqas.asim> git config --global user.name "RanaWaqas1994" Git ko connec
 
 C:\Users\waqas.asim>git config --global user.email "waqasasim19001@gmail.com" Git Email connect ke liye
 
+D:\Waqas DEP (10-02-2023)\React-2026-Practise>git add . jis folder me jake karo ge wo git hub pe jaye ge
+git commit -m "This is the new Code" //yeah code ko jese comments me koi Title dete han
+
+D:\Waqas DEP (10-02-2023)\React-2026-Practise>git branch -m "main" yeah 1 mene branch banai ha
+
+
+==================================================================
+
+Github me 3 main comands during the project jab sab kuch ban gaya ha branches wagera.
+
+git add .
+git commit -m "This is my project" //matlb jo changes kiye han
+git push origin main   // "main" branch name ha
 
