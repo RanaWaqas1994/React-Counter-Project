@@ -1,0 +1,9 @@
+git init to intialize karna ha ke value null deni ha - one time jab hum repository bana rahe han
+
+
+C:\Users\waqas.asim>git version -v  Version check ke liye
+C:\Users\waqas.asim> git config --global user.name "RanaWaqas1994" Git ko connect ke liye
+
+C:\Users\waqas.asim>git config --global user.email "waqasasim19001@gmail.com" Git Email connect ke liye
+
+

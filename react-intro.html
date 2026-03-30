@@ -1,0 +1,223 @@
+Lecture 1:
+
+React library ha JS ki
+Web application ke front end ko banae ko
+
+Backend: jaha hum APIs banatye han or database se hamare project ko connect karte han.
+Frontend: jaha data ko display karte han or APIs ko integrate karte han backend ke sath.
+React JS ke sath hum single page application banate han:
+Single page application: jab UI ka sara ka sara code sath UI pe ajata ha or
+loading ni hoti tabs me usye kehte han single page application.
+Mulipage Application: or jab site load hoti ha 1 page se dosre page pe tw wo multi page app hoti ha
+ or yeah slow hoti ha as compared to single page App.
+ React JS fast hoti as compared to other technologies - Angular se bhi fast ha uska
+or uska reason ha virtual DOM ki waja se
+React Main Topics:
+<img src="/React Main Topics.png" alt="">
+ =================================================================================================
+Lecture 2: 
+React Setup with Vite
+Install Node JS and NPM
+Install Vite
+Make react Apps
+Interview Questions
+To check version open terminal:
+PS C:\Users\waqas.asim> node -v
+v24.11.1
+PS C:\Users\waqas.asim> npm -v
+11.6.2 
+
+https://react.dev/learn/creating-a-react-app
+Vite ko install karna ha 
+Vite ka use karte han react JS ko setup karne ke liye, Install karne ke liye - iske ilawa Vue Js
+or jo bhi framework use kar sakte han.
+Vite ya Parcel(iska use kam ha isko use ni karte)
+Agr ap project bana rahe ho tw khali react na use karo
+uske sath uska koi framework bhi use karo(Bare projects ke liye) Next.js use karo Remix use karo 
+
+VS code me project kholne ke liye powershell me direct (code .) likho ge wo VS code khol dega
+agr install hoga
+
+5173 - represent VITE( vite banane ki koshish ki ha)
+Vite kyn use karte han react setup ke liye
+because fast development server and build tool
+see below image
+<img src="/vite-setup.png" alt="">
+ =================================================================================================
+
+Lecture 3: Install react with Vite on MacOS
+
+ =================================================================================================
+
+Lecture 4: tutorial in Hindi #4 Use and Learn React without Install
+https://vite.dev/guide/ yaha jake ap online editor use kar sakte ho Vite ke sath
+
+ =================================================================================================
+Lecture 5:  React js app Code Flow
+sabse pehle index.html
+phr main.jsx
+sara code apka <div id="root"></div> me
+root > main jsx > app.js = component
+Framework or Library
+Angular Framework ha or React library ha (jaha marzi code kar sakte ho
+ (library ke flow ko ap khud control karte ho))
+ or Framework ka apna khudka flow hota ha uske hisaab se chalna parhta ha
+ =================================================================================================
+ Lecture 6:  File and Folder structure
+ Main files in React:
+ Imp file: sab se imp Package.json - hamari details hoti ha
+ <img src="/main-files.png" alt="">
+ Dependencies - jispe apka project run kar raha hota ha wo dependencies hoti ha jese k
+ - react/react dom
+Package-lock.json me hamari porject ki nested details hoti ha
+Dev dependencies - Development Dependencies jiski waja se ap development kar rahe hoti ha
+
+ =================================================================================================
+  
+Lecture 7:  Make First Component
+<img src="/react-first-component.png" alt="">
+
+Car having wheel, stearing, mirrors all are components
+example of website:
+<img src="/component.png" alt="">
+component ka 1st letter hamesha capital hoga.
+<component/>
+
+component or function me difference:
+component me intially function e likhte han.
+lekin function me kuch na kuch Javascript ka code e hoga jese
+function sum(){
+    return 10 + 10;
+}
+isko use karain ge 
+alert(sum());
+isko hum asye call ni kar sakte <sum/>
+
+ =================================================================================================
+
+Lecture 8: Importing and Exporting Components
+<img src="/component-import-export.png" alt="">
+Jaha pe hum file bhejte han wo export
+example: export default App
+or jaha pe use karte han usye kehte han import.
+example: import Header from "./assets/Header"
+
+multiple component import asye karwate han:
+import UserComponent,{AdminPanel,AdminLogin} from "./UserComponent";
+
+OR
+export default UserComponent ko ayse likhain ge 
+import UserComponent from "./UserComponent";
+
+
+or simple export function Admin {
+
+}
+and
+simple export function Login {
+
+}
+ko asye import karain ge App.jsx ya jaha bhi karna chaho
+import UserComponent,{Admin,Login} from "./UserComponent";
+
+or phr call karo jaha karna ha like
+<Login/>
+<Admin/>
+agr constant call karna ha tw wo bhi
+export const NumNew ="!@$@!"
+same asye import hoga
+import UserComponent,{NumNew} from "./UserComponent";
+
+ =================================================================================================
+
+ Lecture 9: Writing Markup with JSX 
+ <img src="/React-JSX.png" alt="">
+ HTML + Javascript = React(JSX) 
+Function likhne ka tareqa in JSX react
+ <!-- <button onClick={()=>alert("Clicked")} >Click Me</button> -->
+  react without jsx:
+  export function WithoutJsx () {
+    return createElement("div",{id:"rootdiv"},"Hello Div") //kafi Complex ha without JSX.
+
+}
+
+What is JSX?
+JSX is Javascript XML. -(yeah kahi zayda likha ni mile ga na kahi offical documention me likha ha (react.dev))
+Javascript syntax extension or kuch log javascript xml ha.
+
+ =================================================================================================
+
+ Lecture 10: JSX Exercise
+ Write HTML and Javascript code in React(JSX)
+
+  =================================================================================================
+
+ Lecture 11: JSX Exercise Practicle
+ ToDo.jsx is the file of practicle
+
+=================================================================================================
+Lecture 12: JavaScript in JSX with Curly Braces
+
+Data Dynamic/Complex Application data API wagera se aye ga or jb APIs wagera pe kaam karte han large amount of data jab ata ha tbh hum
+Varaible ka use karke Data display karte han
+Like 
+const name = "Waqas"
+
+<h1>{name}</h1>
+=================================================================================================
+Lecture 13: 
+React js click event and function call
+<img src="/clickEvents.png" alt="">
+Click event can be call like onChange or onClick not like onclick.
+Arrow Function 
+const fruit =()=> {
+    alert="Apple"
+}
+
+Interview question react me function ki defination pass karni hoti ha calling nahi
+example:
+ function rent(){
+    alert("rent")
+ }
+ <button onClick={rent}></button> just function name not the rent() with braces.
+=================================================================================================
+
+ Lecture 14: Upgrade React 19 Version
+ <img src="/upateReactVersion.png" alt="">
+ update version 18.3.1
+ RC Version : 19
+
+ Yeah interview question ha
+ "react": "^19.2.0", 19 major release .2 mean minor release and .0 mean PAtch
+ =================================================================================================
+Lecture 15: State in react JS
+<img src="/State-React.png" alt="">
+Jab apko data wagera store karna ha value change karni ha tw apko State ka use karna parhe ga
+or variable ka use ni karna parhe ga.
+use kar sakte han Var, Const mgr waha pe karo jaha apko value change ni karni.
+State ki defination
+<img src="/state-Defination.png" alt="">
+State hamara container ha jo data store karta ha jese variable karta ha or
+ jese hi state me value change hoge hamra component rerender karega
+
+Var or State difference:
+ variable normal data store karta ha mgr component or UI change ni hota but State me data store hokar
+ hamara component rerender ho jata ha
+Mutable or Dynamic mean:
+value ko update or change kar sakte han
+state ko import karna parhe ga Hooks ke sath
+<img src="/Hooks.png" alt="">
+hooks hamare special features hote han functional component ke liye.
+like State,life cycle methods and side effects etc.
+like: 
+esa kuch likha ho wo hooks han 
+import React, { useState } from 'react'
+hook call karne ka tareqa:
+const[count,setCount]= useState(0);
+Hook ko button me khali call karne ka tareqa:
+ <!-- <button onClick={()=> setCounts(counts + 1)} >In Button Count</button> -->
+
+=================================================================================================
+Lecture 16: Toggle or Hide Show
+<img src="/hideandshowtoggle.png" alt="">
+
