@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "name": "Waqas",
+      "email": "Waqas2@gmail1.com",
+      "age": "351231",
+      "id": "Heolg6Nm4W4"
+    },
+    {
+      "name": "Asim",
+      "age": "58",
+      "email": "Asim3@gmail.com",
+      "id": "Wr_8-JZxKN0"
+    },
+    {
+      "name": "Rasheed",
+      "age": "65",
+      "email": "Rasheed@gmail.com",
+      "id": "SbcaXceGf9Y"
+    },
+    {
+      "name": "Mirha",
+      "age": "4",
+      "email": "Mirha@gmail.com",
+      "id": "TXiebq7OcY8"
+    },
+    {
+      "name": "Miraal",
+      "age": "2",
+      "email": "Miraal@gmail.com",
+      "id": "fbjJClv5iXQ"
+    },
+    {
+      "name": "Samra",
+      "age": "29",
+      "email": "Samra@gmail.com",
+      "id": "Qn_wg4i0aQI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

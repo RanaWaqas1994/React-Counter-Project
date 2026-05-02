@@ -221,3 +221,1441 @@ Hook ko button me khali call karne ka tareqa:
 Lecture 16: Toggle or Hide Show
 <img src="/hideandshowtoggle.png" alt="">
 
+=================================================================================================
+
+Lecture 17: Multiple Conditions or Else If
+
+<img src="/multiple-conditions.png" alt="">
+<!-- Multi condition below with Ternary Operator -->
+    <div>
+        <h1>{multiCount} </h1>
+        <button onClick={()=> setmultiCount(multiCount + 1)}>Counter</button>
+        {
+            multiCount == 1 ? <h1>Condition 1</h1>:
+            multiCount == 2 ? <h1>Condition 2</h1>:
+            multiCount == 3 ? <h1>Condition 3</h1>:
+            multiCount == 4 ? <h1>Condition 4</h1>:
+            multiCount == 5 ? <h1>Condition 5</h1>:
+            <h1>Other Conditions</h1>
+        
+        }
+      
+    </div>
+=================================================================================================
+Lecture 18: Props in React JS | Pass data between component
+<img src="/Props.png" alt="">
+data ko pass karne ke liye props use karna parhta ha
+paramater ke through
+<img src="/props-pass.png" alt="">
+props ko khali asye 
+name(props) ni likh sakte balke kuch bhi likh sakte han jese
+function User(data){
+    console.log(data)
+}
+
+=================================================================================================
+Lecture 19: Pass JSX with Props | Default props
+<img src="/defult_Props.png" alt="">
+if we have no value pass in the props then we can also set it to default value 
+<Student name="Waqas"/>
+<Student/>
+function Student(name="New Student"){ yeah jo hum value de rahe yeah default value ha agr component
+ me koi value pass ni ha then upar default value chale ge. This is Defualt Props
+ agr value null ha tw Null e aye ga
+
+ agr component ke andar HTML ko run karna ha like:
+ <component>
+    <h1>This is Inner component</h1>
+ </component>
+ then hum function ke props me function(children) pass kar dain ge
+ 
+
+=================================================================================================
+=================================================================================================
+Lecture 20: Get Input Field Value | On change event
+iske liye use karain ge State or Onchange Function
+<img src="/InputFeild_20.png" alt="">
+on change se hum input values ke andar wali cheeze bhr call karwa sakte han jese
+<input type="text" onchange={()=>{event}=>console.log(event)}>
+matlb jo bhi me andar likho ga wo console me show hota jaye ga
+}
+
+=================================================================================================
+=================================================================================================
+Lecture 21: Controlled Component
+<img src="/controlled_component_21.png" alt="">
+<br>
+Controlled component 1 form ha jiski input feild value control hoti ha react State se.
+<img src="/controlled_component_21_defination.png" alt="">
+This is the main feild to clear all values in state
+            <input type="button" value="CLear"
+             onClick={()=> {setFormName("");setFormEmail("");setFormNumber("")}} />
+
+==================================================================
+==================================================================
+Lecture 22: Handle Checkbox in React
+
+<img src="/handle_checkbox_22.png" alt="">
+checkbox or label ka tag likh ke uske andar htmlFor="js" likho ge
+phr label pe click karo ge tw wo checkbox bhi select hoga sath me 
+
+New fucntion for show and hide values od checkboxes:
+abh yeah const is liye banaya ja raha ke hum pehle sab values show karwayen
+Phr Checked Values han ke ni yanu true ya false show karwayen uske bad
+unchecked pe sab values remove ho jayen uske liye yeah function bana rahe han 
+
+    const handleSkills = (event)=> {
+        console.log(event.target.value, event.target.checked)
+        if (event.target.checked) {
+          //  SetcheckBox(event.target.value) 
+          //Abhi yaha Single Value Show ho rahi ha
+          SetcheckBox([...checkBox,event.target.value]) 
+          //Yeah Checked Ke liye ha 
+          //Array [...skill] Spread Operator 
+          // sari values checkBox ki pehle
+          //bad me jo value checked hoi yani (event.target.value)
+          //  han wo  asye [...checkBox,event.target.value]
+        }
+        else {
+        SetcheckBox([...checkBox.filter((item)=>item!= event.target.value)]) 
+        //Unchecked karne ke liye Filter function lagana ha
+        //yeah apne ap me 1 function rakhta ha
+        //agr ap ...checkbox ni lagtye tw array 
+        // ke andar array chall jaye ga
+            
+        }
+    }
+    
+==================================================================
+==================================================================
+Lecture 23: Handle Radio Button and Dropdown
+<img src="/dropDownRadio_23.png" alt="">
+==================================================================
+==================================================================
+Lecture 24: Loop in JSX with Map Function
+<img src="/map function 23.png" alt="">
+Maping kuch asye kar sakte han hum
+ {student.map( (user)=>(
+                    <tr  key={user.id}>
+                        <td>{user.id}</td>
+                        <td>{user.name}</td>
+                        <td>{user.class}</td>
+                        <td>{user.Age}</td>
+                    </tr>
+                ))
+
+==================================================================
+==================================================================
+Lecture 25: Reuse Component in loop
+<img src="/Reusecomponent.png" alt="">
+
+==================================================================
+==================================================================
+Lecture 27: what are hooks in react js
+<img src="/Hooks_27.png" alt="">
+<img src="/hooks_types.png" alt="">
+Hooks asye features hote han react JS me, jis me functional component 
+ke andar state, life cycle, method, DOM manipulation ko easily kar
+sakte han.
+
+==================================================================
+==================================================================
+Lecture 28: use of useEffect hook in react js
+<img src="/useEffect_28.png" alt="">
+UseEffect ka use kaha hota ha jaha pe state function or kafi cheeze
+call hoi hn tu unka jo side effect hota ha usko control karne ke liye
+UseEffect use hota ha.
+<img src="/useEffect_Used_28_1.png" alt="">
+<img src="/useEffect_28_syntax.png" alt="">
+
+1)
+useEffect(() => {
+ //Call Everytime
+})
+
+2)
+useEffect(() => {
+
+   Call only one time
+},[])
+
+3)
+useEffect(() => {
+
+   Call on only single state
+},[state1])
+
+4)
+useEffect(() => {
+
+   Call on  Both state
+},[state1,state2])
+
+5)
+useEffect(() => {
+
+   Call on  Both Props
+},[prop1,props2])
+
+==================================================================
+==================================================================
+Lecture 29: Handle Props Side Effect with useEffect in component
+<img src="/Handle_PropsUseEffect_29.png" alt="">
+
+Condtions of UseEffects OR In Props
+<img src="/Handle_Props_29.png" alt="">
+
+==================================================================
+==================================================================
+Lecture 30: Use Effect Hook for Life Cycle Methods in React
+<img src="/react-lifeCycle-30.png" alt="">
+<img src="/lifecycle-react-unmount-30.png" alt="">
+jab hum chahte han jese cheeze unhide ho tw kuch chale or jab hide
+hn tw kuch show ho us phase ko unmount phase kehte han jisye kuch
+asye show karte han
+use effect me 
+useEffect(()=>{
+  return ()=> { khali function return kardo sirf unhide pe show hoga
+    baki iske ilawa koi phase ni chale ga
+    console.log("Unmount Phase Only")
+  }
+},[])
+
+==================================================================
+==================================================================
+Lecture 30 A: Props Task for You by Using useEffect.
+
+Make Clock Component
+Where Clock color can change with Props.
+
+==================================================================
+==================================================================
+Lecture: 26 Array Nested Looping with component
+<img src="/Nested_loop_26.png" alt="">
+
+==================================================================
+==================================================================
+Lecture: 31 Array Nested Looping with component
+5 types of Styling in React <br>
+<img src="/styled Component Types.png" alt="">
+Styled Component: <br>
+
+<img src="/styled Component.png" alt=""> <br>
+Libraries of Styled: <br>
+Material UI, Bootstrap, Tailwind CSS <br>
+<img src="/styled Component libraries.png" alt="">
+
+==================================================================
+==================================================================
+
+Lecture: 32  Inline Style in React
+<img src="/Inline-style-32.png" alt="">
+
+
+==================================================================
+==================================================================
+
+Lecture: 33 Dynamic and Conditional Inline Style
+
+<img src="/dynamic_style_33.png" alt="">
+All code in InlineStyle.jsx
+
+==================================================================
+==================================================================
+
+Lecture: 34 External Style | CSS
+<img src="/ExternalCSS_34.png" alt="">
+Just Create new file for CSS, import the file,
+ then add className to all TAGs and then add css to the className.
+
+
+==================================================================
+==================================================================
+
+Lecture: 35 Style with CSS Modules
+<img src="/CSS-Modules-35.png" alt="">
+
+==================================================================
+==================================================================
+Lecture: 36 Styled components
+<img src="/styled_component_36.png" alt="">
+isko pehle import karna parhta ha
+styled component npm
+command: npm i styled components
+==================================================================
+==================================================================
+Lecture: 37 Add Bootstrap with React js
+<img src="/bootstrap_react_37.png" alt="">
+create react app karte han tabh index.jsx ati ha
+jab hum vite ka use karte han tabh main.jsx ati ha
+Yeah command likh ke bootstrap or bootstrap react use kar sakte han hum:
+npm install react-bootstrap bootstrap
+
+==================================================================
+==================================================================
+Lecture: 38  useRef Hook
+<img src="/UseRef_hook_38.png" alt="">
+useRef Hook se ap input feilds control kar sakte ho
+👉 Ye React ka hook hai jo:
+
+HTML element ko direct control karne ke liye use hota hai
+(jaise input pe focus karna)
+value store karta hai bina re-render ke
+🔑 Short Definition
+
+useRef = ek box 📦 jisme value ya element ka reference store hota hai (UI refresh kiye bagair)
+
+🔥 Mini Example
+const ref = useRef();
+
+👉 Access:
+
+ref.current
+
+✅ Bas yaad rakho:
+
+useState → UI update karta hai
+useRef → chup chaap value store karta hai
+
+useRef ek hook hai jo DOM access aur value store karta hai bina re-render ke
+useRef React ka ek hook hai jo 2 main kaam karta hai:
+1) DOM element ko directly access karna
+2) Value store karna (without re-render)
+
+Difference Between UseState,UseRef,UseEffect.
+
+🔥 Short Samajh (React Hooks)
+1️⃣ useState
+
+👉 UI change karne ke liye
+
+Jab value change ho aur screen update ho (re-render)
+
+const [count, setCount] = useState(0);
+
+✔ button click → UI update
+
+2️⃣ useEffect
+
+👉 Side effects ke liye
+
+Jab page load ho ya state change ho to koi kaam karna (API, timer, etc.)
+
+useEffect(() => {
+  console.log("run");
+}, []);
+
+✔ page load pe ya change pe code run hota hai
+
+3️⃣ useRef
+
+👉 value ya element store karne ke liye (without re-render)
+
+const ref = useRef();
+
+✔ input focus
+✔ value store (no UI update)
+
+⚡ Super Short Trick
+useState → screen update 📺
+useEffect → side work 🔁
+useRef → memory box 📦
+
+==================================================================
+==================================================================
+Lecture: 39   uncontrolled component
+<img src="/uncontrolled_component_39.png" alt="">
+jaha pe hum state ka use ni kar rahe us component ko uncontrolled component kaha jaye ga
+==================================================================
+==================================================================
+Lecture: 40   Pass Function in Component as Props
+<img src="/PassFunctionProps_40.png" alt="">
+Event kabhi bhi pass ni kar sakte 1 component se dosre component se
+sirf function ko e pass karte han
+==================================================================
+==================================================================
+Lecture: 41 useFormStatus Hook in React js
+
+🔹 useFormStatus kya hota hai?
+
+Socho tum ne form submit kiya (login, signup, etc.)
+
+👉 useFormStatus batata hai:
+
+Form abhi submit ho raha hai ya nahi
+Button disable karna hai ya loading show karni hai
+🧠 Simple idea:
+
+“Form ka status kya hai?”
+
+Example:
+Submit click kiya → loading
+Response aaya → done
+
+👉 Ye sirf forms ke liye hota hai
+
+
+<img src="/useformstatus_Hook_41.PNG" alt="">
+
+new Promise ka matlb ha ke thora delay leke ana ha uske liye yeah laga rahe han
+const handleSubmit =async ()=>{
+await new Promise(res=> setTimeout(res,2000));
+//await(ke sath async lagana parhta ha hamesha)
+
+
+}
+
+==================================================================
+==================================================================
+Lecture: 42  useTransition Hook in React js
+
+<img src="/useTransition_42.PNG" alt="">
+
+
+🔹 useTransition kya hota hai?
+
+Socho tum search box me type kar rahe ho:
+
+Har letter pe data filter ho raha hai
+UI slow ho jati hai
+
+👉 useTransition kehta hai:
+
+“Important kaam (typing) fast rakho, baqi update background me karo”
+
+🧠 Simple idea:
+
+“UI ko smooth rakhna, heavy update ko side me daal dena”
+
+👉 Ye non-form updates ke liye hota hai
+===============================================
+⚡ Super simple difference:
+useFormStatus → Form submit ho raha hai ya nahi (status check)
+
+useTransition → UI ko slow hone se bachana (smooth update)
+
+🧠 One line yaad rakh:
+
+👉 useFormStatus = “Form ka haal kya hai?”
+👉 useTransition = “UI slow na ho, kaam background me ho”
+===============================================
+==================================================================
+==================================================================
+Lecture: 43  Keep Your Components Pure in React.js
+<img src="/pureComponent_43.PNG" alt="">
+👉 Normal component = har baar render hota hai (chahe data same ho)
+👉 Pure component (React.memo) = sirf tab render hota hai jab data (props) change ho
+
+mtlb agr humne let x = 10; liya ha tw wo andar jake x = 20 na ho same value rahe uske liye humne
+Props ke through value pass karni parhe ge
+like: <Pure count={1}/>
+like: <Pure count={2}/>
+like: <Pure count={3}/>
+like: <Pure count={4}/>
+==================================================================
+==================================================================
+Lecture: 44 Derived State in React.js
+
+<img src="/derivedState-44.PNG" alt="">
+Wo state jo kisi aur state ya props se calculate ho — manually store karne ki zarurat nahi hoti.
+
+Simple example (React me):
+function Example() {
+  const [price, setPrice] = useState(100);
+  const [quantity, setQuantity] = useState(2);
+
+  // ✅ Derived state
+  const total = price * quantity;
+
+  return <h1>Total: {total}</h1>;
+}
+Samajh lo asaan lafzon me:
+price aur quantity → real state
+total → derived state (kyunki ye un dono se bana hai)
+Important baat:
+
+❌ Galat approach:
+
+const [total, setTotal] = useState(0); // unnecessary
+
+✅ Sahi approach:
+
+Direct calculate karo (price * quantity)
+Extra state mat banao
+1 line me:
+
+👉 Derived state = wo value jo existing state/props se nikalti hai (calculate hoti hai), store nahi karte.
+
+👉 Derived state = bani banai cheez (calculated cheez)
+
+Real life example:
+Tumhare paas:
+1 item price = 100
+quantity = 2
+
+👉 Total kya hai?
+➡️ 100 × 2 = 200
+
+Ab ye 200 tumne kahin save nahi kiya, bas calculate kiya na?
+👉 Yehi derived state hai.
+
+Aur simple:
+Original data = price, quantity
+In se jo nikla = total
+
+👉 Total = derived state
+
+Ek line me ultra simple:
+
+👉 Jo cheez tum khud calculate karo (store na karo), wo derived state hoti hai.
+
+==================================================================
+==================================================================
+Lecture: 45 Lifting State Up in React js
+<img src="/liftingStateUp_45.PNG" alt="">
+Lifting State Up ka matlab hai:
+
+👉 State ko child component se utha ke parent component me rakhna
+taake multiple components usko share kar saken.
+
+Problem (simple samjho):
+
+2 components hain:
+
+Input
+Display
+
+Dono ko same data chahiye (maan lo name)
+
+Agar dono apni apni state rakhen ❌
+→ data sync nahi rahega
+
+Solution (Lifting State Up):
+
+👉 State ko parent me le jao
+👉 aur props ke through children ko pass karo
+
+==================================================================
+==================================================================
+Lecture: 46 Updating Objects in State
+
+👉 React me object state update karne ke liye naya object banate hain,
+ purane ko direct change nahi karte.
+
+ Object ko update karne ka tareeqa = 
+ purana object copy karo + jo change chahiye wo override karo
+
+ function App() {
+  const [user, setUser] = useState({
+    name: "Ahmed",
+    age: 20
+  });
+
+  const changeName = () => {
+    setUser({
+      ...user,      // purana data copy
+      name: "Ali"   // sirf ye change
+    });
+  };
+
+  return (
+    <>
+      <h1>{user.name}</h1>
+      <button onClick={changeName}>Change</button>
+    </>
+  );
+}
+
+
+==================================================================
+==================================================================
+Lecture: 47 Updating Array in State
+
+const HandleName = (name)=> { 
+data[data.length-1]= name; 
+setData(...data) 
+} 
+
+yeah asye name change kar raha or age ko asye
+ const HandleName = (age)=> { 
+    data[data.length-1].age= age; 
+    setData(...data) 
+}
+
+❌ Problems:
+data[data.length-1] = name → direct state change (galat)
+setData(...data) → array toot jata hai (spread wrong use)
+
+
+✅ EASY & CORRECT WAY (simple version)
+👉 Last user ka NAME change:
+const HandleName = (name) => {
+  setData(prev => {
+    const updated = [...prev];
+    updated[updated.length - 1].name = name;
+    return updated;
+  });
+};
+
+👉 Last user ka Age change:
+const HandleAge = (age) => {
+  setData(prev => {
+    const updated = [...prev];
+    updated[updated.length - 1].age = age;
+    return updated;
+  });
+};
+
+💡 Simple samajh:
+Tum kya socho:
+
+👉 "last banda lo → usko change karo → wapas rakh do"
+
+Steps:
+array copy karo (...prev)
+last element pakro
+usko update karo
+return new array
+⚡ 1 line me:
+
+👉 React me array/object ko direct change nahi karte, copy bana ke last item update karte hain.
+
+==================================================================
+==================================================================
+Lecture: 48 useActionState Hook
+
+<img src="/useactionstate_48.PNG" alt="">
+
+
+==================================================================
+Lecture: 48 useActionState Hook
+
+Chalo simple aur seedha samajhte hain 👍
+
+👉 useActionState kya hai?
+
+👉 Ye React ka hook hai jo form submit handle karne aur uska result/state manage karne ke liye use hota hai.
+
+👉 Mostly use hota hai jab:
+
+form submit karna ho
+server action ya async kaam ho
+loading / success / error handle karna ho
+🔹 Simple syntax:
+const [state, formAction] = useActionState(actionFunction, initialState);
+🔹 Ye kya deta hai?
+state → result (success / error / data)
+formAction → function jo form me lagta hai
+🔹 Simple example:
+function App() {
+  const [state, formAction] = useActionState(async (prevState, formData) => {
+    const name = formData.get("name");
+
+    if (!name) {
+      return { error: "Name required" };
+    }
+
+    return { success: `Hello ${name}` };
+  }, {});
+
+  return (
+    <form action={formAction}>
+      <input name="name" />
+      <button type="submit">Submit</button>
+
+      {state.error && <p>{state.error}</p>}
+      {state.success && <p>{state.success}</p>}
+    </form>
+  );
+}
+💡 Asaan samajh:
+
+👉 User form fill karta hai
+👉 submit karta hai
+👉 useActionState result pakad leta hai
+👉 tum UI me show kar dete ho
+
+🔥 Real use:
+form validation
+login/signup
+API call
+loading/error handle
+⚡ 1 line me:
+
+👉 useActionState = form submit + result handle ek hi jagah
+
+
+
+==================================================================
+Lecture: 49 useId Hook in 
+<img src="/UseIDhook_49.PNG" alt="">
+Chalo simple tareeqe se samjho 👍
+
+👉 useId kya hai?
+
+👉 useId React ka hook hai jo unique ID generate karta hai
+(zyada tar form fields ke liye)
+
+🤔 Kyu use karte hain?
+
+Jab tum input aur label ko link karna chahte ho:
+
+<label for="name">Name</label>
+<input id="name" />
+
+👉 Yahan for aur id same hone chahiye
+👉 agar multiple inputs hon to ID clash ho sakti hai
+
+👉 is problem ko solve karta hai useId
+
+✅ Simple example:
+import { useId } from "react";
+
+function App() {
+  const id = useId();
+
+  return (
+    <>
+      <label htmlFor={id}>Name</label>
+      <input id={id} type="text" />
+    </>
+  );
+}
+💡 Kya ho raha hai?
+
+👉 useId() → ek unique id de raha hai
+👉 label aur input dono me same id use ho rahi hai
+
+🔥 Multiple fields example:
+function App() {
+  const nameId = useId();
+  const emailId = useId();
+
+  return (
+    <>
+      <label htmlFor={nameId}>Name</label>
+      <input id={nameId} />
+
+      <label htmlFor={emailId}>Email</label>
+      <input id={emailId} />
+    </>
+  );
+}
+❗ Important:
+
+👉 Ye random nahi hota, React stable ID deta hai (SSR friendly)
+
+Asaan lafzon me:
+
+👉 useId = har input ke liye unique ID banana
+
+⚡ 1 line me:
+
+👉 useId hook unique ID generate karta hai jo form elements ko safely connect karta hai
+
+==================================================================
+Lecture: 50 Fragment in React.js
+<img src="/Fragment_50.PNG" alt="">
+👉 Fragments kya hote hain React me?
+
+👉 Fragments ka use hota hai multiple elements ko group karne ke liye bina extra div add kiye
+
+❌ Problem (without Fragment):
+return (
+  <div>
+    <h1>Hello</h1>
+    <p>World</p>
+  </div>
+);
+
+👉 Yahan extra div aa gaya (kabhi kabhi zaroorat nahi hoti)
+
+✅ Solution (Fragment):
+return (
+  <>
+    <h1>Hello</h1>
+    <p>World</p>
+  </>
+);
+
+👉 Koi extra div nahi bana 🎯
+
+🧠 Ye kyu use karte hain?
+Clean HTML
+Extra div se bachna
+CSS layout kharab nahi hota
+🔹 Full syntax bhi hota hai:
+import { Fragment } from "react";
+
+return (
+  <Fragment>
+    <h1>Hello</h1>
+    <p>World</p>
+  </Fragment>
+);
+💡 Asaan samajh:
+
+👉 Wrapper chahiye but div nahi chahiye → Fragment use karo
+
+⚡ 1 line me:
+
+👉 Fragment = bina extra div ke multiple elements wrap karna
+
+==================================================================
+==================================================================
+Lecture: 51 Rules for React js Hooks
+<img src="/RulesofHooks.PNG" alt="">
+Use Hooks at the Top level not in the Conditions
+<img src="/RulesofHooksoptions.PNG" alt="">
+or kaha pe hook call karne chahiye react ke component me 
+call hooks from custom Hooks
+<img src="/RulesofHooksthatweused.PNG" alt="">
+in hook dont use  UseData name as function that may call in hook 
+<img src="/RulesofHooksoptions1.PNG" alt="">
+
+Chalo seedhi aur asaan language me samjho 👍
+👉 React Hooks ke Rules
+React hooks (jaise useState, useEffect) use karte waqt kuch rules follow karne hote hain:
+
+✅ Rule 1: Top level pe use karo
+👉 Hooks ko component ke andar top pe likho
+❌ Galat:
+if (condition) {  useState(); // ❌}
+✅ Sahi:
+const [count, setCount] = useState(0); // ✅ top level
+
+✅ Rule 2: Sirf React function component me use karo
+👉 Hooks ko:
+
+function components me
+
+ya custom hooks me
+
+use karte hain
+❌ Galat:
+function normalFunction() {  useState(); // ❌}
+
+✅ Sahi:
+function App() {  const [count, setCount] = useState(0); // ✅}
+
+✅ Rule 3: Same order me call hon
+👉 Hooks har render pe same order me chalne chahiye
+
+❌ Galat:
+if (show) {  useEffect(() => {});}
+👉 order change ho jata hai
+
+💡 Asaan samajh:
+React internally hooks ko order se track karta hai
+agar order change hua → bug/error
+
+🔥 Short yaad rakhne ka trick:
+
+Top pe use karo
+Sirf component me use karo
+Condition/loop me mat use karo
+
+⚡ 1 line me:
+👉 Hooks hamesha top level pe, same order me, aur sirf React components me use hote hain
+
+==================================================================
+==================================================================
+
+Lecture: 52 Context API Reactjs
+
+
+<img src="/contextAPI_52.PNG" alt="">
+Chalo bilkul simple tareeqe se samjho 👍
+
+👉 Context API kya hai?
+
+👉 Context API React ka tareeqa hai data ko directly share karne ka
+bina har level pe props pass kiye
+
+🤔 Problem (without Context):
+<App>
+  <Parent>
+    <Child>
+      <GrandChild />  // isko data chahiye
+    </Child>
+  </Parent>
+</App>
+
+👉 Data upar se neeche bhejna padega:
+App → Parent → Child → GrandChild ❌ (bohat lamba)
+
+✅ Solution (Context API):
+
+👉 Data direct GrandChild ko mil jayega 🎯
+
+🔹 Step by step:
+1️⃣ Context create karo
+import { createContext } from "react";
+
+const MyContext = createContext();
+2️⃣ Provider se wrap karo
+<MyContext.Provider value="Hello Waqas">
+  <App />
+</MyContext.Provider>
+3️⃣ Data use karo (child me)
+import { useContext } from "react";
+
+const data = useContext(MyContext);
+
+<h1>{data}</h1>
+💡 Asaan samajh:
+
+👉 Pehle tum props chain me bhej rahe the
+👉 ab direct kisi bhi component ko data mil raha hai
+
+🔥 Real use:
+user login data
+theme (dark/light)
+language
+global state
+⚡ 1 line me:
+
+👉 Context API = bina props passing ke data share karna across components
+
+Example With parts:
+
+🧠 Asaan samajh:
+
+👉 createContext = dabba banaya
+👉 Provider = data dala
+👉 useContext = data nikala
+
+⚡ 1 line me:
+
+👉 Context API = global data share karne ka system (create → provide → use)
+
+-----------------------============================-----------------------------
+
+🔹 Context API ke main parts
+1️⃣ createContext()
+
+👉 Context banane ke liye use hota hai
+
+const MyContext = createContext();
+
+👉 Ye ek container jaisa hai jisme data store hoga
+
+2️⃣ Provider
+
+👉 Ye data provide (dene) ke liye hota hai
+
+<MyContext.Provider value="Hello">
+  <App />
+</MyContext.Provider>
+
+👉 value = jo data tum share karna chahte ho
+
+3️⃣ useContext()
+
+👉 Data use (lene) ke liye
+
+const data = useContext(MyContext);
+
+👉 Jis component ko data chahiye, wo yahan se le lega
+
+🔥 Full flow (kaise kaam karta hai)
+const MyContext = createContext();
+
+function App() {
+  return (
+    <MyContext.Provider value="Waqas">
+      <Child />
+    </MyContext.Provider>
+  );
+}
+
+function Child() {
+  const data = useContext(MyContext);
+  return <h1>{data}</h1>;
+}
+
+👉 Output: Waqas
+
+🔹 Advanced use (real life)
+
+👉 Sirf string nahi, object bhi pass karte hain:
+
+<!-- <MyContext.Provider value={{ name: "Ali", age: 20 }}> -->
+
+Use:
+
+const user = useContext(MyContext);
+
+<h1>{user.name}</h1>
+🔹 Functions bhi pass kar sakte ho
+<!-- <MyContext.Provider value={{ name, setName }}> -->
+
+👉 Child component state bhi update kar sakta hai
+
+🔹 Custom Hook (clean code)
+const useMyContext = () => useContext(MyContext);
+
+👉 phir:
+
+const data = useMyContext();
+💡 Kab use karte hain?
+Login user data
+Theme (dark/light)
+Language
+Global state
+⚠️ Important baatein:
+Har jagah use mat karo (performance issue ho sakta hai)
+Small/global data ke liye best hai
+
+
+==================================================================
+==================================================================
+
+Lecture: 53 Custom Hooks in Reactjs
+
+<img src="/CustomHooks_53.PNG" alt="">
+
+
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+
+Lecture: 54 install Tailwind CSS in React
+<img src="/Install_Tailwind_css_54.PNG" alt="">
+
+React + Vite me Tailwind CSS install karne ka easy method:
+Step 1: Install packages
+npm install tailwindcss @tailwindcss/vite
+Step 2: Vite config update karo
+vite.config.js
+import { defineConfig } from 'vite'import react from '@vitejs/plugin-react'import tailwindcss from '@tailwindcss/vite'export default defineConfig({  plugins: [react(), tailwindcss()],})
+Step 3: CSS file me import karo
+src/index.css
+@import "tailwindcss";
+Step 4: index.css main.jsx me already imported hoti hai (check kar lo)
+import "./index.css";
+Step 5: Run project
+npm run dev
+Test karo
+function App() {  return <h1 className="text-3xl font-bold text-blue-600">Hello Tailwind</h1>}
+1 line me:
+Vite + React me ab Tailwind ka easiest latest setup yehi hai.
+==================================================================
+==================================================================
+
+Lecture: 55 What is API
+
+<img src="/API_55.PNG" alt="">
+API ka full form Application Programming Interface hai.
+
+Simple Meaning:
+
+API ek bridge / waiter hoti hai jo do software systems ko aapas me connect karti hai.
+
+Jaise:
+
+Frontend (React app)
+Backend server
+Database
+Third-party service
+
+Inke darmiyan data bhejne lene ke liye API use hoti hai.
+
+Restaurant Example:
+Tum order dete ho waiter ko
+Waiter kitchen me jata hai
+Food le aata hai
+
+Yahan:
+
+Tum = App/User
+Waiter = API
+Kitchen = Server/Database
+Web Development Example:
+
+<img src="/API_DATA_SHARE_55.PNG" alt="">
+
+
+
+React app user data mangta hai:
+
+fetch("https://api.example.com/users")
+
+API response bhejti hai Json Format me:
+
+[
+  { "id": 1, "name": "Ali" }
+]
+
+<img src="/API_JSON_55.PNG" alt="">
+API kya karti hai?
+Data fetch
+Login/signup
+Payment
+Weather data
+Maps
+Social media integration
+1 line me:
+
+API ek system hai jo apps ko aapas me baat karne aur data exchange karne deta hai.
+
+
+======================================================
+======================================================
+API Basics:
+API kya hoti hai? (Bilkul Basic)
+
+API ek raasta / messenger hai jo tumhari app ko kisi dusre system se connect karta hai.
+
+Jaise tumhari React website ko user data chahiye. Tum direct database me nahi jaate. Tum API ko request bhejte ho.
+
+API server se data la kar tumhe deti hai.
+
+Real Life Example
+
+ATM machine socho:
+
+Tum card lagate ho
+PIN dalte ho
+ATM bank server se baat karta hai
+Paisa deta hai
+
+Yahan:
+
+Tum = User
+ATM screen = Frontend
+Bank system = Backend
+Connection rules = API
+Web Development me API ka use
+
+Tum React bana rahe ho. Tumhe users dikhane hain.
+
+Tum request bhejte ho:
+
+fetch("https://jsonplaceholder.typicode.com/users")
+
+API response bhejti hai:
+
+[
+  { "id": 1, "name": "Leanne Graham" }
+]
+
+Ab tum React me map karke screen pe show kar dete ho.
+
+API kis kis kaam me use hoti hai?
+1. Login
+
+Email/password bhejo → API check karegi.
+
+2. Signup
+
+New user create karegi.
+
+3. Products
+
+Daraz/Amazon products load.
+
+4. Weather
+
+City bhejo → weather mil jayega.
+
+5. Payments
+
+JazzCash / Stripe / Easypaisa integration.
+
+API banti kese hai?
+
+API usually backend developer banata hai using:
+
+Node.js + Express
+PHP Laravel
+Django Python
+Java Spring
+
+Example Node.js:
+
+app.get("/users", (req, res) => {
+  res.json([
+    { id: 1, name: "Waqas" },
+    { id: 2, name: "Ali" }
+  ]);
+});
+
+Iska matlab:
+
+Agar koi /users pe request bheje → data bhej do.
+
+Frontend wale ka kaam kya?
+
+Tum backend nahi bana rahe to tension nahi.
+
+Tumhara kaam:
+
+Request bhejna
+fetch("/users")
+Response lena
+Screen pe show karna
+React me Example
+import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setUsers(data));
+  }, []);
+
+  return (
+    <div>
+      {users.map(user => (
+        <h3 key={user.id}>{user.name}</h3>
+      ))}
+    </div>
+  );
+}
+Important Terms
+GET
+
+Data lena
+
+POST
+
+Data bhejna / create
+
+PUT
+
+Update
+
+DELETE
+
+Delete
+
+Tumhare liye abhi kya seekhna zaroori hai?
+
+Agar tum frontend developer ho to:
+
+Step 1:
+
+Fetch API
+
+Step 2:
+
+useEffect + useState
+
+Step 3:
+
+Loading / Error handling
+
+Step 4:
+
+POST request
+
+Step 5:
+
+Axios
+
+1 line me yaad rakho:
+
+API = Frontend aur Backend ke darmiyan baat karne ka system.
+
+Honest Advice
+
+Tum pehli dafa kar rahe ho to pehle fake APIs pe practice karo:
+
+https://jsonplaceholder.typicode.com/users
+https://fakestoreapi.com/products
+=================================================================
+=================================================================
+
+Lecture: 56 Fetch and Display Data from API with Get Method
+<img src="/Fetch_Data_From_API_With_GetMethod_56.PNG" alt="">
+API Methods:
+<img src="/API_METHODS_56.PNG" alt="">
+Api se data Get karna ha display karwana ha tw GET Method
+Agr API me data store karwana ha ya save karwana ha tbh POST Method use karain ge
+agr update karna ha then PUT/PATCH Method
+Agr delete then DELETE Method
+
+Extension for API in VS code "Thunder Client"for checking the API Status.
+
+Jab hum API call karte han tw "Fetch" ka use karte han or us time pe apko Promise handle
+karna hota ha tw jis method me API CALL KARO ge usme "async" laga lena like:
+
+async function  getUserData(){    //async is using in function as we calling API
+  const url: "https://dummyjson.com/users"
+}
+
+abh Fetch method me jo URL dale ge tw hamari API call ho jaye ge Like
+
+let response =  fetch(url) isme humne get method call kiya ha because yeah default Method ha
+or iske sath hume "await" use karna parhe ga because yeah promise return karta ha like asye:
+let response = await fetch(url)
+
+abh next step jab response se data mile ga me usye abh "JSON format" me convert karn ga
+like
+
+response = response.json() 
+
+or again yeah bhi "Promise" return karta ha tw "await" laga lo like:
+
+response = await response.json();
+console.log(response)
+
+abh bas simple useEffect se method ko call karlo Like
+
+useEffect(()=>{
+  getUserData();  //Yeah method ha hamara jo upar banaya ha
+},[]);
+
+UseEffect is liye use kiya ke page load pe hume Data Fetch karna
+tw UseEffect kbh call hoa ha jab hamara page load hota ha or yeah bas 1 dafa call hoga.
+
+
+=================================================================
+=================================================================
+
+Lecture: 57 JSON-server in Hindi | Make API for React, Angular, Vue
+
+<img src="/Json-server-57.PNG" alt="">
+
+Install JSON server:
+https://www.npmjs.com/package/json-server
+command:
+npm install json-server
+======>>>>
+ new folder "API"
+    uske bad yeah site kholo: https://www.npmjs.com/package/json-server
+
+    uske "API" folder ke andar ake 
+    phr yeah command run karo:
+    mean hum json server install kar rahe:
+    npm install json-server
+    uske bad ap 1 file banao "db.json" ke new file banao or usme khudse 1 "API" banao 
+    or yeah command dalo phr:
+    "npx json-server db.json"
+    or wo yaha show hoge is server pe:
+    http://localhost:3000/
+
+    <!-- Lecture 58: Integrate JSON Server API and Loader -->
+    <img src="/Integrate_JSON Server API and Loader-58.PNG" alt="">
+
+    jb bhi loading wala kam check karna ha pehle
+<!-- Lecture 59: Routes and Pages for User list and Add User UI  -->
+ <img src="/Routes and Pages for User list and Add User UI.PNG" alt="">
+
+ <!-- Lecture 60: Integrate Post method API  -->
+  <img src="/PostMethod_API_61.PNG" alt="">
+
+          let APIurl= "http://localhost:3000/users"
+        //abh hum post method use kar rahe han tw abh hum fetch url ko change karain ge like:
+        let APIresponse = await fetch(APIurl,{
+            method:"Post",
+            body:JSON.stringify({name,age,email})
+        });
+        APIresponse = await APIresponse.json()
+        console.log("User Added")
+
+   <!-- Lecture 61:  Delete method API  -->
+  <img src="/DeleteAPI_61.PNG" alt="">
+  User ko API list se delete karne ke liye:
+  UI pe data fetch karna ha tw end pe getJsonUserData show karna parhe ga warna refresh
+  pe remove hoga
+      const DeleteUser = async(id)=>{
+        let NewResponse = await fetch(newUrl + "/" + id,{
+            method: "delete"
+        })
+        NewResponse = await NewResponse.json() 
+        console.log(id,"Record Deleted");
+        getJsonUserData();
+        
+
+    }
+   <!-- Lecture 62:  Make Page for Edit user details -->
+    <img src="/EditDetail_62.PNG" alt="">
+    isme hum Navigate Hook use karain edit karne ke liye:
+
+     const navigate = useNavigate()
+
+     iske bad function banayen ge
+
+     
+        // Edit User
+    const EditUser = (id)=> {
+            //User sabse pehle navigate karna ha tw Naviagte Hook lagayen ge
+            navigate("/edit/" + id)
+    }
+
+
+   <!-- Lecture 63:  Make Page for Edit user details -->
+    <img src="/Populate_Data_API_63.PNG" alt="">
+
+//Yeah step sbse end pe ha 
+        const [name,setName] = useState("")
+    const [age,setAge] = useState("")
+    const [email,setEmail] = useState("")
+
+
+
+
+    sabse pehle useParams hook use karain ge id store ke liye
+        const {id} = useParams();
+    // console.log(id);
+
+    uske bad data get karne ke liye URL me
+        useEffect(()=>{
+        getUserData();
+    },[])
+
+      Uske bad function leke usme user ki specific id path wali API store krain ge Dynamic
+      uske bad 3 state leke unhe set kar dain Input fields me take unka response mil sake
+
+        const getUserData = async ()=>{
+
+        const URL= "http://localhost:3000/users/" + id;
+        console.log(URL)
+        let response = await fetch(URL);
+        response = await response.json()
+          console.log(response)
+          setName(response.name)
+          setEmail(response.email)
+          setAge(response.age)
+    }
+
+    end pe input feilds me value={name} etc set kar dain ge
+
+
+       <!-- Lecture 64:  Update data with PUT API Method -->
+    <img src="/PUT API Method_64.PNG" alt="">
+
+    Put Method Edit user API me call hoga asye:
+
+        const updateUserData = async ()=> {
+        console.log(name,email,age);
+        let response = await fetch(URL, {
+            method:"Put",
+            body: JSON.stringify({name,email,age})
+        })
+        response = await response.json();
+        console.log(response);
+        alert("User Data Updated")
+        navigate("/")
+        
+        
+    }
+
+
+<!-- Lecture: 65 simple validation on input fields -->
+ <img src="/simpleValidation_65.PNG" alt="">
+
+ 
+<!-- Lecture: 66 validation with useActionState -->
+ <img src="/useActionStateHook for Validation_66.PNG" alt="">

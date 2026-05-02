@@ -50,7 +50,7 @@ const userArray = ["sam","Waqas","Peter"]
         <h1> {userObj.room} </h1>
         <h1> {userArray[0,1]} </h1>
         <img src={path} alt="" /> <br />
-        <input type="text" value={name} id={name} />
+        <input type="text" id={name} />
       
     </div>
   )

@@ -1,67 +1,33 @@
-import Header from "./assets/Header"
-import UserComponent,{AdminPanel,AdminLogin, AdminNo} from "./UserComponent";
-import JsxUse from "./JsxUse";
-import ToDo from "./ToDo";
-import CurlyBraces from "./CurlyBraces";
-import NewEvents from "./NewEvents";
-import NewHooks from "./NewHooks";
-import TestCounter from "./TestCounter";
-function App (){
-    // alert(increment());
+import React from 'react'
+import UserList from "./UserList";
+import { Routes , Route, NavLink, Link} from "react-router";
+import AddUserApi from "./AddUserApi";
+import EditUserAPI from './EditUserAPI';
+import SimpleValidation from './SimpleValidation';
+import UseActionHookValidation from './UseActionHookValidation';
+export default function App() {
   return (
-    <>
-    <Header/>
-    <h1>Hello React Component {increment()} </h1>
-    ==============================================================================================
-    <Car/>
-    ==============================================================================================
-    
-    <Colors/>
-    ==============================================================================================
+    <div>
+<ul className='user-lists'>
+    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/add">Add User</NavLink></li>
+</ul>
 
-    <hr />
-    <UserComponent/>
-    ==============================================================================================
-    <AdminLogin/>
-    ==============================================================================================
-    <AdminPanel/>
-    ==============================================================================================
-    <h1>   {AdminNo} </h1>
-    <hr />
-    <JsxUse/>
-    ==============================================================================================
-    <ToDo/>
-    ==============================================================================================
-    <CurlyBraces/>
-    {/* <WithoutJsx/> */}
-        <hr />
-    <NewEvents/>
+
+
+<Routes>
+  <Route path="/" element={<UserList/>} />
+  <Route path="/add" element={<AddUserApi/>} />
+  <Route path="/edit/:id" element={<EditUserAPI/>} />
+</Routes>
+
 <hr />
-  ==============================================================================================
-<NewHooks/>
-==============================================================================================
-<TestCounter/>
-    </>
 
+<SimpleValidation/>
+
+<hr />
+<UseActionHookValidation/>
+      
+    </div>
   )
 }
-
-function Car (){
-  return(
-    <h1>My Car is Ferrari</h1>
-  ) 
-}
-
-function Colors () {
-  return (
-    <h1>The color of my Car is Red.</h1>
-  )
-}
-
-function increment(){
-  return 10 + 11;
-}
-
-export default App
-
-  

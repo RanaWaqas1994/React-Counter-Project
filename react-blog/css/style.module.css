@@ -1,0 +1,22 @@
+.heading {
+    color: red;
+}
+
+.cards {
+    box-shadow: 1px 0px 14px 5px #fff;
+    width: 250px;
+    padding: 0px;
+    margin: 10px;
+}
+
+.img {
+    width: 100%;
+}
+
+.textWrap {
+    padding: 10px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
