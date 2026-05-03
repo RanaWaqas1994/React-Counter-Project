@@ -5,6 +5,7 @@ import AddUserApi from "./AddUserApi";
 import EditUserAPI from './EditUserAPI';
 import SimpleValidation from './SimpleValidation';
 import UseActionHookValidation from './UseActionHookValidation';
+import RestAPIs from './RestAPIs';
 export default function App() {
   return (
     <div>
@@ -22,12 +23,19 @@ export default function App() {
 </Routes>
 
 <hr />
-
+ {/* Lecture: 65 simple validation on input fields */}
 <SimpleValidation/>
 
 <hr />
+{/* <!-- Lecture: 66 validation with useActionState --> */}
 <UseActionHookValidation/>
-      
+
+{/* Lecture: 67 useReducer Hook */}
+
+<hr />
+{/* <!-- Lecture: 68 Call Rest API with use API --> */}
+<RestAPIs/>
+
     </div>
   )
 }

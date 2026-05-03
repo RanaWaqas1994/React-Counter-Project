@@ -1659,3 +1659,54 @@ npm install json-server
  
 <!-- Lecture: 66 validation with useActionState -->
  <img src="/useActionStateHook for Validation_66.PNG" alt="">
+
+ <!-- Lecture: 68 Call Rest API with use API -->
+  <img src="/Call Rest API with use API_68.PNG" alt="">
+
+useApi React ka built-in hook nahi hota.
+👉 Ye kya hota hai?
+useApi ek custom hook hota hai jo hum khud banate hain, taake API calls ka code repeat na karna pare.
+
+Simple samjho:
+
+
+React ke built-in hooks: useState, useEffect
+
+
+useApi = tumhara apna banaya hua hook (helper function)
+
+
+
+Example:
+function useApi(url) {  // API call logic yahan hota hai}
+
+Kyun use karte hain?
+
+
+Code reusable ho jata hai
+
+
+Har component me same fetch code likhna nahi parta
+
+
+Clean & organized code
+
+
+
+Short answer:
+👉 useApi = custom hook for API calling (React ka default feature nahi hai)
+
+<img src="/UseApi_58_New.PNG" alt="">
+jo ko esa feature jo bara kaam kar raha ho JS me wo API bol sakte han jese Fetch Function se API
+Call karte han tw yeah bhi 1 API e ha.
+
+Use API:
+React ke andr 1 "use" name se feature banaya or yeah buhat kam karta tw isko bhi API bolna shuru
+kar diya ha yeah "Hook" ni ha.
+
+Rest API:
+Yeah backend se data leke ati ha frontend ke liye
+jese User ka Login ka sign wagera ka yeah feature pe kam karna hota tbh backend ko Frontend se 
+connect karne ko Rest Api bola jata ha.
+
+

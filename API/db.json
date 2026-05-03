@@ -35,6 +35,12 @@
       "age": "29",
       "email": "Samra@gmail.com",
       "id": "Qn_wg4i0aQI"
+    },
+    {
+      "name": "Miral",
+      "age": "3",
+      "email": "miraal@gmail.com",
+      "id": "D5lY4ttSwPc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
